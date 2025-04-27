@@ -29,6 +29,7 @@ class ManageUserController extends Controller
             'nip' => $request->nip,
             'name' => $request->name,
             'password' => Hash::make($request->password),
+            'role' => 'worker',
         ]);
 
         $user->save();

@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Tambah Akun</h1>
+                    <h1 class="m-0">Tambah Akun Pegawai</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Tambah Akun</li>
+                        <li class="breadcrumb-item active">Tambah Akun Pegawai</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
