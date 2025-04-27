@@ -26,14 +26,13 @@
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>50</h3>
+                    <h3>{{ $patient_register_today }}</h3>
 
-                    <p>Surat Masuk</p>
+                    <p>Pasian Hari Ini</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-stats-bars"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -41,14 +40,13 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>100</h3>
+                    <h3>{{ $patiet_register_month }}</h3>
 
-                    <p>Surat Keluar</p>
+                    <p>Pasien Sebulan Terakhir</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-stats-bars"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -56,14 +54,13 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>5</h3>
+                    <h3>Rp. {{ number_format($todayRevenue) }}</h3>
 
-                    <p>Jenis Surat</p>
+                    <p>Pendapatan Harian</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-document-text"></i>
+                    <i class="ion ion-cash"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -71,14 +68,13 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h3>3</h3>
+                    <h3>Rp. {{ number_format($lastMonthRevenue) }}</h3>
 
-                    <p>Pengguna Sistem</p>
+                    <p>Pendapatan Bulanan</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-person"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
