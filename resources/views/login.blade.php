@@ -24,7 +24,8 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <h1><b>RSABHK - REGISTRASI</h1>
+                <img src="{{ asset('logo.png') }}" alt="Logo" width="150px" height="100px" style="object-fit:contain">
+                <h3><b>RSABHK - REGISTRASI</h3>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Login untuk memulai</p>
