@@ -4,8 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManageUserController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\DocumentTypeController;
 use App\Http\Controllers\InsuranceController;
+use App\Http\Controllers\TreatmentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,6 +52,12 @@ Route::middleware('auth')->group(function () {
         Route::post('/asuransi', [InsuranceController::class, 'store'])->name('insurance.store');
         Route::put('/asuransi/{id}', [InsuranceController::class, 'update'])->name('insurance.update');
         Route::delete('/asuransi/{id}', [InsuranceController::class, 'destroy'])->name('insurance.destroy');
+
+        # Manage Jenis Tindakan
+        Route::get('/tindakan', [TreatmentController::class, 'index'])->name('treatment.index');
+        Route::post('/tindakan', [TreatmentController::class, 'store'])->name('treatment.store');
+        Route::put('/tindakan/{id}', [TreatmentController::class, 'update'])->name('treatment.update');
+        Route::delete('/tindakan/{id}', [TreatmentController::class, 'destroy'])->name('treatment.destroy');
     });
 
     // Profile Page

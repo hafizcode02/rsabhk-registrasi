@@ -40,28 +40,18 @@
                             'is_admin' => true, // Menambahkan field ini untuk mengontrol akses
                         ],
                         (object) [
+                            'icon' => 'fas fa-list',
+                            'name' => 'Jenis Tindakan',
+                            'link' => '/tindakan',
+                            'childs' => [],
+                            'is_admin' => true, // Menambahkan field ini untuk mengontrol akses
+                        ],
+                        (object) [
                             'icon' => 'fas fa-user',
                             'name' => 'Manajemen Pegawai',
                             'link' => '/manajemen-akun',
                             'childs' => [],
                             'is_admin' => true, // Menambahkan field ini untuk mengontrol akses
-                        ],
-                        (object) [
-                            'title' => 'DROPDOWN EXAMPLE',
-                        ],
-                        (object) [
-                            'icon' => 'fas fa-book',
-                            'name' => 'Dropdown Example',
-                            'childs' => [
-                                (object) [
-                                    'name' => 'Dropdown 1',
-                                    'link' => '#',
-                                ],
-                                (object) [
-                                    'name' => 'Dropdown 2',
-                                    'link' => '#',
-                                ],
-                            ],
                         ],
                         (object) [
                             'title' => 'AKUN PENGGUNA',
