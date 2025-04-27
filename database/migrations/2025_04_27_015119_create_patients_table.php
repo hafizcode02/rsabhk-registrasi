@@ -27,9 +27,9 @@ return new class extends Migration
 
             // Medical Information
             $table->string('blood_type', 10); // (Golongan Darah)
-            $table->string('allergies');
-            $table->string('current_medicines');
-            $table->text('medical_history');
+            $table->string('allergies')->nullable(); // (Alergi)
+            $table->string('current_medicines')->nullable(); // (Obat yang Sedang Dikonsumsi)
+            $table->text('medical_history')->nullable(); // (Riwayat Penyakit)
             $table->timestamps();
             $table->softDeletes();
         });
