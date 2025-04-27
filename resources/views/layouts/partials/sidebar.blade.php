@@ -33,18 +33,30 @@
                             'childs' => [],
                         ],
                         (object) [
+                            'icon' => 'fas fa-book',
+                            'name' => 'Registrasi Pasien',
+                            'link' => '/registrasi-pasien',
+                            'childs' => [],
+                        ],
+                        (object) [
                             'icon' => 'fas fa-list',
-                            'name' => 'Jenis Asuransi',
+                            'name' => 'Manajemen Asuransi',
                             'link' => '/asuransi',
                             'childs' => [],
                             'is_admin' => true, // Menambahkan field ini untuk mengontrol akses
                         ],
                         (object) [
                             'icon' => 'fas fa-list',
-                            'name' => 'Jenis Tindakan',
+                            'name' => 'Manajemen Tindakan',
                             'link' => '/tindakan',
                             'childs' => [],
                             'is_admin' => true, // Menambahkan field ini untuk mengontrol akses
+                        ],
+                        (object) [
+                            'icon' => 'fas fa-user',
+                            'name' => 'Manajemen Pasien',
+                            'link' => '/pasien',
+                            'childs' => [],
                         ],
                         (object) [
                             'icon' => 'fas fa-user',
@@ -73,8 +85,8 @@
                             @continue
                         @endif
 
-                        @if (isset($menu->is_admin) && $menu->is_admin && !Auth::user()->role === 'admin')
-                            @continue {{-- Menghentikan iterasi jika bukan superuser --}}
+                        @if (isset($menu->is_admin) && $menu->is_admin && Auth::user()->role !== 'admin')
+                            @continue {{-- Menghentikan iterasi jika bukan admin --}}
                         @endif
 
                         @php
