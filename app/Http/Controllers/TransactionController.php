@@ -39,7 +39,7 @@ class TransactionController extends Controller
         ]);
 
         // Redirect back with a success message
-        return redirect()->back()->with('success', 'Transaction created successfully.');
+        return redirect()->back()->with('success', 'Transaksi berhasil ditambahkan.');
     }
 
     public function update(Request $request, $transId)
@@ -58,7 +58,7 @@ class TransactionController extends Controller
         ]);
 
         // Redirect back with a success message
-        return redirect()->back()->with('success', 'Transaction updated successfully.');
+        return redirect()->back()->with('success', 'Transaksi berhasil diperbarui.');
     }
 
     public function destroy($transId)
@@ -68,6 +68,6 @@ class TransactionController extends Controller
         $transaction->delete();
 
         // Redirect back with a success message
-        return redirect()->back()->with('success', 'Transaction deleted successfully.');
+        return redirect()->back()->with('success', 'Transaksi berhasil dihapus.');
     }
 }
