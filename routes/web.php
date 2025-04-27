@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManageUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InsuranceController;
+use App\Http\Controllers\PatienRegistrationController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ServiceRoomController;
 use App\Http\Controllers\TreatmentController;
@@ -76,6 +77,15 @@ Route::middleware('auth')->group(function () {
     Route::put('/pasien/{id}', [PatientController::class, 'update'])->name('patient-management.update');
     Route::delete('/pasien/{id}', [PatientController::class, 'destroy'])->name('patient-management.destroy');
     Route::get('/pasien/{id}', [PatientController::class, 'show'])->name('patient-management.show');
+
+    # Manage Registrasi Pasien
+    Route::get('/registrasi-pasien', [PatienRegistrationController::class, 'index'])->name('patient-registration.index');
+    Route::get('/registrasi-pasien/tambah', [PatienRegistrationController::class, 'create'])->name('patient-registration.create');
+    Route::get('/registrasi-pasien/{id}', [PatienRegistrationController::class, 'show'])->name('patient-registration.show');
+    Route::post('/registrasi-pasien', [PatienRegistrationController::class, 'store'])->name('patient-registration.store');
+    Route::get('/registrasi-pasien/{id}/edit', [PatienRegistrationController::class, 'edit'])->name('patient-registration.edit');
+    Route::put('/registrasi-pasien/{id}', [PatienRegistrationController::class, 'update'])->name('patient-registration.update');
+    Route::delete('/registrasi-pasien/{id}', [PatienRegistrationController::class, 'destroy'])->name('patient-registration.destroy');
 
     // Profile Page
     Route::get('/profil-akun', [ProfileController::class, 'edit'])->name('profile.edit');
