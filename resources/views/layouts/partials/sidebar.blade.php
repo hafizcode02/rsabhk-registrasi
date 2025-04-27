@@ -53,6 +53,13 @@
                             'is_admin' => true, // Menambahkan field ini untuk mengontrol akses
                         ],
                         (object) [
+                            'icon' => 'fas fa-list',
+                            'name' => 'Manajemen Ruangan',
+                            'link' => '/ruang-pelayanan',
+                            'childs' => [],
+                            'is_admin' => true, // Menambahkan field ini untuk mengontrol akses
+                        ],
+                        (object) [
                             'icon' => 'fas fa-user',
                             'name' => 'Manajemen Pasien',
                             'link' => '/pasien',

@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManageUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InsuranceController;
+use App\Http\Controllers\ServiceRoomController;
 use App\Http\Controllers\TreatmentController;
 use Illuminate\Support\Facades\Route;
 
@@ -58,6 +59,12 @@ Route::middleware('auth')->group(function () {
         Route::post('/tindakan', [TreatmentController::class, 'store'])->name('treatment.store');
         Route::put('/tindakan/{id}', [TreatmentController::class, 'update'])->name('treatment.update');
         Route::delete('/tindakan/{id}', [TreatmentController::class, 'destroy'])->name('treatment.destroy');
+
+        # Manage Ruang Pelayanan
+        Route::get('/ruang-pelayanan', [ServiceRoomController::class, 'index'])->name('service-room.index');
+        Route::post('/ruang-pelayanan', [ServiceRoomController::class, 'store'])->name('service-room.store');
+        Route::put('/ruang-pelayanan/{id}', [ServiceRoomController::class, 'update'])->name('service-room.update');
+        Route::delete('/ruang-pelayanan/{id}', [ServiceRoomController::class, 'destroy'])->name('service-room.destroy');
     });
 
     // Profile Page
