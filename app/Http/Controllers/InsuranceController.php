@@ -21,11 +21,11 @@ class InsuranceController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'name' => 'required|string|max:255',
         ]);
 
-        Insurance::create($request->all());
+        Insurance::create($data);
 
         return redirect()->route('insurance.index')
             ->with('success', 'Jenis Asuransi berhasil ditambahkan.');
@@ -36,12 +36,12 @@ class InsuranceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $data = $request->validate([
             'name' => 'required|string|max:255',
         ]);
 
-        $insurance = insurance::findOrFail($id);
-        $insurance->update($request->all());
+        $insurance = Insurance::findOrFail($id);
+        $insurance->update($data);
 
         return redirect()->route('insurance.index')
             ->with('success', 'Jenis Asuransi berhasil diperbarui.');
@@ -52,7 +52,7 @@ class InsuranceController extends Controller
      */
     public function destroy($id)
     {
-        $insurance = insurance::findOrFail($id);
+        $insurance = Insurance::findOrFail($id);
         $insurance->delete();
 
         return redirect()->route('insurance.index')

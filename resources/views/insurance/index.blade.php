@@ -17,7 +17,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Jenis Asuransi</li>
+                        <li class="breadcrumb-item active">Asuransi</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -72,7 +72,7 @@
     <div class="modal fade" id="addInsuranceModal" tabindex="-1" aria-labelledby="addInsuranceModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
-            <form id="addDocumentTypeForm" method="POST" action="{{ route('insurance.store') }}">
+            <form id="addInsuranceForm" method="POST" action="{{ route('insurance.store') }}">
                 @csrf
                 <div class="modal-content">
                     <div class="modal-header">
@@ -83,8 +83,8 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="documentTypeName" class="form-label">Nama Jenis Asuransi</label>
-                            <input type="text" class="form-control" id="documentTypeName" name="name" required>
+                            <label for="InsuranceName" class="form-label">Nama Jenis Asuransi</label>
+                            <input type="text" class="form-control" id="InsuranceName" name="name" required>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -100,7 +100,7 @@
     <div class="modal fade" id="editInsuranceModal" tabindex="-1" aria-labelledby="editInsuranceModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
-            <form id="editDocumentTypeForm" method="POST">
+            <form id="editInsuranceForm" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="modal-content">
@@ -112,8 +112,8 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="editDocumentTypeName" class="form-label">Nama Jenis Asuransi</label>
-                            <input type="text" class="form-control" id="editDocumentTypeName" name="name" required>
+                            <label for="editInsuranceName" class="form-label">Nama Jenis Asuransi</label>
+                            <input type="text" class="form-control" id="editInsuranceName" name="name" required>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -194,7 +194,7 @@
             // Edit Document Type
             const editButtons = document.querySelectorAll('.edit-btn');
             const editModal = document.getElementById('editInsuranceModal');
-            const editForm = document.getElementById('editDocumentTypeForm');
+            const editForm = document.getElementById('editInsuranceForm');
 
             editButtons.forEach(button => {
                 button.addEventListener('click', function() {
@@ -202,7 +202,7 @@
                     const name = this.getAttribute('data-name');
 
                     editForm.setAttribute('action', url);
-                    document.getElementById('editDocumentTypeName').value = name;
+                    document.getElementById('editInsuranceName').value = name;
 
                     $(editModal).modal('show'); // Use jQuery to show the modal
                 });
