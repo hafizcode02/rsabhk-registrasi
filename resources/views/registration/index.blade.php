@@ -56,11 +56,13 @@
                             <td>{{ $data->user->name }}</td>
                             <td>{{ $data->created_at }}</td>
                             <td>
+                                <a href="{{ route('transaction.index', $data->id) }}" class="btn btn-sm btn-info">
+                                    <i class="fas fa-money-bill"></i>&nbsp;&nbsp;Transaksi
+                                </a>
                                 <a href="{{ route('patient-registration.edit', $data->id) }}"
                                     class="btn btn-sm btn-warning">
                                     <i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Edit
                                 </a>
-
                                 <button type="button" class="btn btn-sm btn-danger delete-btn"
                                     data-url="{{ route('patient-registration.destroy', $data->id) }}">
                                     <i class="fas fa-trash"></i>&nbsp;&nbsp;Hapus

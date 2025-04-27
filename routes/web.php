@@ -8,6 +8,7 @@ use App\Http\Controllers\InsuranceController;
 use App\Http\Controllers\PatienRegistrationController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ServiceRoomController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TreatmentController;
 use Illuminate\Support\Facades\Route;
 
@@ -86,6 +87,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/registrasi-pasien/{id}/edit', [PatienRegistrationController::class, 'edit'])->name('patient-registration.edit');
     Route::put('/registrasi-pasien/{id}', [PatienRegistrationController::class, 'update'])->name('patient-registration.update');
     Route::delete('/registrasi-pasien/{id}', [PatienRegistrationController::class, 'destroy'])->name('patient-registration.destroy');
+
+    # Manage Transaksi
+    Route::get('/registrasi-pasien/{id}/transaksi/', [TransactionController::class, 'index'])->name('transaction.index');
+    Route::post('/registrasi-pasien/{id}/transaksi', [TransactionController::class, 'store'])->name('transaction.store');
+
+    Route::put('/transaksi/{transId}', [TransactionController::class, 'update'])->name('transaction.update');
+    Route::delete('/transaksi/{transId}', [TransactionController::class, 'destroy'])->name('transaction.destroy');
 
     // Profile Page
     Route::get('/profil-akun', [ProfileController::class, 'edit'])->name('profile.edit');
