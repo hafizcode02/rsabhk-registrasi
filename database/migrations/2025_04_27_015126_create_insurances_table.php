@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('document_types', function (Blueprint $table) {
+        Schema::create('insurances', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->softDeletes();
+            $table->string('name', 100); // (BPJS, Asuransi Swasta, dll)
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('document_types');
+        Schema::dropIfExists('insurances');
     }
 };

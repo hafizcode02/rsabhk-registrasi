@@ -34,16 +34,17 @@
                         ],
                         (object) [
                             'icon' => 'fas fa-list',
-                            'name' => 'Jenis Surat',
-                            'link' => '/jenis-surat',
+                            'name' => 'Jenis Asuransi',
+                            'link' => '/asuransi',
                             'childs' => [],
+                            'is_admin' => true, // Menambahkan field ini untuk mengontrol akses
                         ],
                         (object) [
                             'icon' => 'fas fa-user',
-                            'name' => 'Pegawai',
+                            'name' => 'Manajemen Pegawai',
                             'link' => '/manajemen-akun',
                             'childs' => [],
-                            'is_superuser' => true, // Menambahkan field ini untuk mengontrol akses
+                            'is_admin' => true, // Menambahkan field ini untuk mengontrol akses
                         ],
                         (object) [
                             'title' => 'DROPDOWN EXAMPLE',
@@ -82,7 +83,7 @@
                             @continue
                         @endif
 
-                        @if (isset($menu->is_superuser) && $menu->is_superuser && !Auth::user()->role === 'admin')
+                        @if (isset($menu->is_admin) && $menu->is_admin && !Auth::user()->role === 'admin')
                             @continue {{-- Menghentikan iterasi jika bukan superuser --}}
                         @endif
 

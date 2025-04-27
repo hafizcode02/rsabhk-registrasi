@@ -12,12 +12,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Manajemen Data Jenis Surat</h1>
+                    <h1 class="m-0">Manajemen Data Asuransi</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Jenis Surat</li>
+                        <li class="breadcrumb-item active">Jenis Asuransi</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,9 +28,9 @@
 @section('main-content')
     <div class="card">
         <div class="card-header">
-            <button class="btn btn-info" data-toggle="modal" data-target="#addDocumentTypeModal">
+            <button class="btn btn-info" data-toggle="modal" data-target="#addInsuranceModal">
                 <i class="fas fa-plus"></i>
-                &nbsp;&nbsp;Tambah Jenis Surat
+                &nbsp;&nbsp;Tambah Jenis Asuransi
             </button>
         </div>
         <div class="card-body">
@@ -38,25 +38,25 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Jenis Surat</th>
+                        <th>Jenis Asuransi</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($documentTypes as $index => $doc)
+                    @foreach ($insurances as $index => $data)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $doc->name }}</td>
+                            <td>{{ $data->name }}</td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-warning edit-btn"
-                                    data-url="{{ route('doc-types-management.update', $doc->id) }}"
-                                    data-name="{{ $doc->name }}" data-toggle="modal"
-                                    data-target="#editDocumentTypeModal">
+                                    data-url="{{ route('insurance.update', $data->id) }}"
+                                    data-name="{{ $data->name }}" data-toggle="modal"
+                                    data-target="#editInsuranceModal">
                                     <i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Edit
                                 </a>
                                 <button type="button" class="btn btn-sm btn-danger delete-btn"
-                                    data-url="{{ route('doc-types-management.destroy', $doc->id) }}" data-toggle="modal"
-                                    data-target="#deleteDocumentTypeModal">
+                                    data-url="{{ route('insurance.destroy', $data->id) }}" data-toggle="modal"
+                                    data-target="#deleteInsuranceModal">
                                     <i class="fas fa-trash"></i>&nbsp;&nbsp;Hapus
                                 </button>
                             </td>
@@ -68,22 +68,22 @@
         <!-- /.card-body -->
     </div>
 
-    <!-- Modal Tambah Jenis Surat -->
-    <div class="modal fade" id="addDocumentTypeModal" tabindex="-1" aria-labelledby="addDocumentTypeModalLabel"
+    <!-- Modal Tambah Jenis Asuransi -->
+    <div class="modal fade" id="addInsuranceModal" tabindex="-1" aria-labelledby="addInsuranceModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
-            <form id="addDocumentTypeForm" method="POST" action="{{ route('doc-types-management.store') }}">
+            <form id="addDocumentTypeForm" method="POST" action="{{ route('insurance.store') }}">
                 @csrf
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addDocumentTypeModalLabel">Tambah Jenis Surat</h5>
+                        <h5 class="modal-title" id="addInsuranceModalLabel">Tambah Jenis Asuransi</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="documentTypeName" class="form-label">Nama Jenis Surat</label>
+                            <label for="documentTypeName" class="form-label">Nama Jenis Asuransi</label>
                             <input type="text" class="form-control" id="documentTypeName" name="name" required>
                         </div>
                     </div>
@@ -96,8 +96,8 @@
         </div>
     </div>
 
-    <!-- Modal Edit Jenis Surat -->
-    <div class="modal fade" id="editDocumentTypeModal" tabindex="-1" aria-labelledby="editDocumentTypeModalLabel"
+    <!-- Modal Edit Jenis Asuransi -->
+    <div class="modal fade" id="editInsuranceModal" tabindex="-1" aria-labelledby="editInsuranceModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <form id="editDocumentTypeForm" method="POST">
@@ -105,14 +105,14 @@
                 @method('PUT')
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="editDocumentTypeModalLabel">Edit Jenis Surat</h5>
+                        <h5 class="modal-title" id="editInsuranceModalLabel">Edit Jenis Asuransi</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="editDocumentTypeName" class="form-label">Nama Jenis Surat</label>
+                            <label for="editDocumentTypeName" class="form-label">Nama Jenis Asuransi</label>
                             <input type="text" class="form-control" id="editDocumentTypeName" name="name" required>
                         </div>
                     </div>
@@ -126,18 +126,18 @@
     </div>
 
     <!-- Modal Konfirmasi Hapus -->
-    <div class="modal fade" id="deleteDocumentTypeModal" tabindex="-1" aria-labelledby="deleteDocumentTypeModalLabel"
+    <div class="modal fade" id="deleteInsuranceModal" tabindex="-1" aria-labelledby="deleteInsuranceModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteDocumentTypeModalLabel">Hapus Jenis Surat</h5>
+                    <h5 class="modal-title" id="deleteInsuranceModalLabel">Hapus Jenis Asuransi</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Apakah Anda yakin ingin menghapus jenis surat ini?
+                    Apakah Anda yakin ingin menghapus jenis asuransi ini?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -193,7 +193,7 @@
 
             // Edit Document Type
             const editButtons = document.querySelectorAll('.edit-btn');
-            const editModal = document.getElementById('editDocumentTypeModal');
+            const editModal = document.getElementById('editInsuranceModal');
             const editForm = document.getElementById('editDocumentTypeForm');
 
             editButtons.forEach(button => {
@@ -210,7 +210,7 @@
 
             // Delete Document Type
             const deleteButtons = document.querySelectorAll('.delete-btn');
-            const deleteModal = document.getElementById('deleteDocumentTypeModal');
+            const deleteModal = document.getElementById('deleteInsuranceModal');
             const deleteForm = document.getElementById('deleteForm');
 
             deleteButtons.forEach(button => {

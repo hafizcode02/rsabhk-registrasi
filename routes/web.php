@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManageUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DocumentTypeController;
+use App\Http\Controllers\InsuranceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,13 +46,13 @@ Route::middleware('auth')->group(function () {
         Route::put('/manajemen-akun/{id}', [ManageUserController::class, 'update'])->name('users-management.update');
         Route::delete('/manajemen-akun/{id}', [ManageUserController::class, 'destroy'])->name('users-management.destroy');
         Route::post('/manajemen-akun/{id}/disable', [ManageUserController::class, 'disable'])->name('users-management.disable');
-    });
 
-    # Manage Jenis Surat
-    Route::get('/jenis-surat', [DocumentTypeController::class, 'index'])->name('doc-types-management.index');
-    Route::post('/jenis-surat', [DocumentTypeController::class, 'store'])->name('doc-types-management.store');
-    Route::put('/jenis-surat/{id}', [DocumentTypeController::class, 'update'])->name('doc-types-management.update');
-    Route::delete('/jenis-surat/{id}', [DocumentTypeController::class, 'destroy'])->name('doc-types-management.destroy');
+        # Manage Jenis Asuransi
+        Route::get('/asuransi', [InsuranceController::class, 'index'])->name('insurance.index');
+        Route::post('/asuransi', [InsuranceController::class, 'store'])->name('insurance.store');
+        Route::put('/asuransi/{id}', [InsuranceController::class, 'update'])->name('insurance.update');
+        Route::delete('/asuransi/{id}', [InsuranceController::class, 'destroy'])->name('insurance.destroy');
+    });
 
     // Profile Page
     Route::get('/profil-akun', [ProfileController::class, 'edit'])->name('profile.edit');
