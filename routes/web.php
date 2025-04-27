@@ -5,8 +5,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManageUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DocumentTypeController;
-use App\Http\Controllers\DocumentInController;
-use App\Http\Controllers\DocumentOutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +36,7 @@ Route::middleware('auth')->group(function () {
     # Dashboard Page
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::middleware('is_super_admin')->group(function () {
+    Route::middleware('isAdmin')->group(function () {
         # Manage User Page
         Route::get('/manajemen-akun', [ManageUserController::class, 'index'])->name('users-management.index');
         Route::get('/manajemen-akun/tambah', [ManageUserController::class, 'create'])->name('users-management.create');

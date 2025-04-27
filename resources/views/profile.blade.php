@@ -34,9 +34,9 @@
                     @method('PUT')
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Email address</label>
-                            <input type="email" class="form-control" placeholder="Masukan email"
-                                value="{{ $user->email }}" disabled>
+                            <label>NIP</label>
+                            <input type="email" class="form-control" placeholder="Masukan NIP"
+                                value="{{ $user->nip }}" disabled>
                         </div>
                         <div class="form-group">
                             <label>Nama</label>

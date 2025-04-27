@@ -15,13 +15,24 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         $user = [
-            'name' => 'Admin SIM Surat',
-            'email' => 'admin@simsurat.com',
-            'password' => Hash::make('admin123'),
-            'is_superuser' => true,
-            'is_active' => true,
+            [
+                'name' => 'Admin RSABHK',
+                'nip' => '202510001234',
+                'password' => Hash::make('admin123'),
+                'role' => 'admin',
+                'is_active' => true,
+                'created_at' => now(),
+            ],
+            [
+                'name' => 'Pegawai RSABHK',
+                'nip' => '202510001235',
+                'password' => Hash::make('worker123'),
+                'role' => 'worker',
+                'is_active' => true,
+                'created_at' => now(),
+            ],
         ];
 
-        User::create($user);
+        User::insert($user);
     }
 }

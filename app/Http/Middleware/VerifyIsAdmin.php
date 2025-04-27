@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 
-class VerifyIsSuperAdmin
+class VerifyIsAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class VerifyIsSuperAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->is_superuser) {
+        if (Auth::user()->role === 'admin') {
             return $next($request);
         }
 

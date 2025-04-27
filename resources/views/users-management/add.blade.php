@@ -33,10 +33,10 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Email address</label>
-                            <input name="email" type="email" class="form-control" placeholder="Masukan email"
-                                value="{{ old('email') }}" required>
-                            @error('email')
+                            <label>NIP</label>
+                            <input name="nip" type="text" class="form-control" placeholder="Masukan NIP"
+                                value="{{ old('nip') }}" required>
+                            @error('nip')
                                 <small style="color: red;">{{ $message }}</small>
                             @enderror
                         </div>

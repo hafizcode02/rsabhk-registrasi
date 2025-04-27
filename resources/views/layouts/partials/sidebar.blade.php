@@ -40,7 +40,7 @@
                         ],
                         (object) [
                             'icon' => 'fas fa-user',
-                            'name' => 'Pengguna',
+                            'name' => 'Pegawai',
                             'link' => '/manajemen-akun',
                             'childs' => [],
                             'is_superuser' => true, // Menambahkan field ini untuk mengontrol akses
@@ -82,7 +82,7 @@
                             @continue
                         @endif
 
-                        @if (isset($menu->is_superuser) && $menu->is_superuser && !Auth::user()->is_superuser)
+                        @if (isset($menu->is_superuser) && $menu->is_superuser && !Auth::user()->role === 'admin')
                             @continue {{-- Menghentikan iterasi jika bukan superuser --}}
                         @endif
 

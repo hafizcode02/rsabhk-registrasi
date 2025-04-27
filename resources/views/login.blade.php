@@ -24,7 +24,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <h1><b>Laravel Boilerplate</h1>
+                <h1><b>RSABHK - REGISTRASI</h1>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Login untuk memulai</p>
@@ -33,15 +33,15 @@
                     @csrf
                     <div class="form-group mb-3">
                         <div class="input-group">
-                            <input type="email" name="email" class="form-control" placeholder="Email" required
-                                value="{{ old('email') }}">
+                            <input type="text" name="nip" class="form-control" placeholder="NIP" required
+                                value="{{ old('nip') }}">
                             <div class="input-group-append">
                                 <div class="input-group-text">
-                                    <span class="fas fa-envelope"></span>
+                                    <span class="fas fa-user"></span>
                                 </div>
                             </div>
                         </div>
-                        @error('email')
+                        @error('nip')
                             <small style="color: red;">{{ $message }}</small>
                         @enderror
                     </div>

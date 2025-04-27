@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('nip')->unique();
             $table->string('password');
-            $table->boolean('is_superuser')->default(false);
+            $table->enum('role', ['admin', 'worker', 'patient'])->default('patient');
             $table->boolean('is_active')->default(true);
             $table->rememberToken();
             $table->timestamps();

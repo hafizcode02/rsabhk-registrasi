@@ -28,7 +28,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'string', 'email'],
+            'nip' => ['required', 'string', 'min:12', 'max:12'],
             'password' => ['required', 'string'],
         ];
     }
@@ -43,9 +43,9 @@ class LoginRequest extends FormRequest
         $this->ensureIsNotRateLimited();
 
         // Check user is_active status and not soft deleted
-        $user = User::where('email', $this->string('email'))->first();
+        $user = User::where('nip', $this->string('nip'))->first();
 
-        if (!$user || !$user->is_active || $user->trashed() || !Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+        if (!$user || !$user->is_active || $user->trashed() || !Auth::attempt($this->only('nip', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([

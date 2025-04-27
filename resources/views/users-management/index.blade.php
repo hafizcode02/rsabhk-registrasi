@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Manajemen Data Akun</h1>
+                    <h1 class="m-0">Manajemen Data Pegawai</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -30,7 +30,7 @@
         <div class="card-header">
             <a href="{{ route('users-management.create') }}" class="btn btn-info">
                 <i class="fas fa-plus"></i>
-                &nbsp;&nbsp;Tambah Akun
+                &nbsp;&nbsp;Tambah Akun Pegawai
             </a>
         </div>
         <div class="card-body">
@@ -38,8 +38,8 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>NIP</th>
                         <th>Nama Akun</th>
-                        <th>Email Akun</th>
                         <th>Dibuat Pada</th>
                         <th>Status</th>
                         <th>Aksi</th>
@@ -49,8 +49,8 @@
                     @foreach ($users as $index => $user)
                         <tr>
                             <td>{{ $index + 1 }}</td>
+                            <td>{{ $user->nip }}</td>
                             <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
                             <td>{{ $user->created_at }}</td>
                             <td>
                                 @if ($user->is_active)
