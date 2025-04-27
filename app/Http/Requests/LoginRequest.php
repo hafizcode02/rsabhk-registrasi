@@ -33,6 +33,18 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    public function messages(): array
+    {
+        return [
+            'nip.required' => 'NIP harus diisi.',
+            'nip.string' => 'NIP harus berupa string.',
+            'nip.min' => 'NIP harus terdiri dari 12 karakter.',
+            'nip.max' => 'NIP tidak boleh lebih dari 12 karakter.',
+            'password.required' => 'Password harus diisi.',
+            'password.string' => 'Password harus berupa string.',
+        ];
+    }
+
     /**
      * Attempt to authenticate the request's credentials.
      *
@@ -49,7 +61,7 @@ class LoginRequest extends FormRequest
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => 'Akun tidak cocok dengan data kami.',
+                'nip' => 'Akun tidak cocok dengan data kami.',
             ]);
         }
 
