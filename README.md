@@ -7,19 +7,28 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Laravel LTE Boilerplate
+## RSABHK - Test Case
 
-Created for My Laravel 10 Boilerplate Projects, This project comes pre-integrated with the latest [AdminLTE 3 template](https://github.com/ColorlibHQ/AdminLTE/releases/tag/v3.2.0) and several built-in features designed to accelerate web development process.
-The feature include : 
-- Authentication Login -> User authentication and login
-- Management User Account -> User management (create, edit, delete, enable/disable)
-- Edit Profile -> Profile editing (change password, name)
+Created for technical test with tight deadline (I created it for 11 hour) for FullStack Developer Position at RSAB Harapan Kita Jakarta. Building with Laravel, Blade, & MySQL.
+Feature : 
+- Dashboard
+- Manage Worker
+- Manage Insurance Data
+- Manage Service Room Data
+- Manage Patient Data
+- Manage Patient Registration Data
+- Manage Detail Transaction on Patien Registration
+- Manage Action Treatment Data
+- Multi Role Login (Admin, Worker)
 
 ### Preview : 
-<img src="https://github.com/user-attachments/assets/56d5f855-a10e-46c0-a487-a30f6e27df85" height="400" alt="Login Page">
-<img src="https://github.com/user-attachments/assets/adb0613a-c370-44d0-aa28-213be1bb59f5" height="400" alt="Dashboard Page">
-<img src="https://github.com/user-attachments/assets/f6ad36d1-9b6a-425e-9e4d-347f1fcb5302" height="400" alt="Manage User Page">
-<img src="https://github.com/user-attachments/assets/ce23267a-fb6f-4429-805d-8228ebc1914a" height="400" alt="Change Profile Page">
+<img src="https://github.com/user-attachments/assets/07794525-6a4a-4745-8df4-01719d0eb70b" height="400" alt="Login Page">
+<img src="https://github.com/user-attachments/assets/6ca0dee4-a69b-4e30-9c3f-3cd498d49635" height="400" alt="Login Page">
+<img src="https://github.com/user-attachments/assets/402a7eba-cbeb-4310-a4e7-08302e2428c2" height="400" alt="Login Page">
+<img src="https://github.com/user-attachments/assets/fe750ea8-4521-4549-b101-bda03e658de4" height="400" alt="Login Page">
+<img src="https://github.com/user-attachments/assets/6de9bed4-79d2-4b06-9193-6def10ddf6d7" height="400" alt="Login Page">
+<img src="https://github.com/user-attachments/assets/26c29d25-e093-4d56-8651-0e576f4ae937" height="400" alt="Login Page">
+<img src="https://github.com/user-attachments/assets/28eb06ef-08ab-45d8-9ab6-2d7044a95d5c" height="400" alt="Login Page">
 
 ## How to Install
 ```bash
